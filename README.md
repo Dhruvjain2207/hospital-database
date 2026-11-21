@@ -137,75 +137,9 @@ The same pattern (GET → list, POST → create, PUT → update, DELETE → remo
 > [!NOTE]
 > In classic ER notation **rectangles = entities**, **ellipses/circles = attributes**, **diamonds = relationships**, **underlined attribute = primary key**, **dashed ellipse = derived attribute**.
 
-```
-                    ┌─────────────────────────────────────────────────────────────────┐
-                    │                       CLASSIC ER NOTATION                        │
-                    └─────────────────────────────────────────────────────────────────┘
-
-   (dept_head)   (location)
-       ○              ○
-        \            /
-(dept_name)─○   ○─(dept_id) ← PK
-              \  /
-           ┌──────────────┐          ┌──has──┐         ┌──────────────┐
-           │  DEPARTMENTS │──────────◇        ◇─────────│   DOCTORS    │
-           └──────────────┘  1     has    N  └──────────┴──────────────┘
-                 │  │  │                                  │  │  │  │
-                 │  │  └──assigns──N──┌────────────┐     │  │  │  └○(email)
-                 │  └──includes──N──┌─┤   NURSES   │     │  │  └○(phone)
-                 │                  │ └────────────┘     │  └○(salary)
-                 │                  │  ○(nurse_name)     └○(specialization)
-                 │                  │  ○(phone)
-                 │                  │  ○(shift)        (doctor_name)─○
-                 │                  │
-                 └──includes──N──┌──┴─────────┐
-                                 │   STAFF    │
-                                 └────────────┘
-                                  ○(staff_name) ○(role) ○(phone) ○(salary)
+![Hospital Management System — Classic ER Diagram](./assets/er_diagram.jpg)
 
 
-   (patient_name) (age) (gender) (phone) (address) (blood_group) (registered_date)
-         ○          ○      ○       ○         ○           ○              ○
-          \         |      |       |         |           |             /
-           ──────────────────────────────────────────────────────────
-                              ┌───────────┐
-                              │  PATIENTS │
-                              └───────────┘
-                               │          │
-                       books   │          │  has
-                        N      │          │   N
-                        ▼      │          │   ▼
-               ┌──────────────┐│          │┌────────────────┐
-               │ APPOINTMENTS ││          ││   ADMISSIONS   │
-               └──────────────┘│          │└────────────────┘
-              ○(appt_date)      │          │  ○(admission_date)
-              ○(appt_time)      │          │  ○(discharge_date)
-              ○(status)         │          │  ○(total_charges)
-              ○(reason)         │          │        │         │
-                   │            │          │        │  allocated_to
-              attends           │          │        │        ▼
-                   N            │          │   ┌──────────┐
-                   ▼            │          │   │   ROOMS  │
-               DOCTORS ─────────┘          │   └──────────┘
-               (also supervises admissions)│    ○(room_number) ○(room_type)
-                                           │    ○(status) ○(charges_per_day)
-                                           │
-                                 receives  │
-                                     N     │
-                                     ▼     │
-                              ┌────────────────┐
-                              │  PRESCRIPTIONS │
-                              └────────────────┘
-                               ○(dosage) ○(prescribed_date) ○(qty_prescribed)
-                                   │                  │
-                            writes │          prescribed_in
-                               N   │                N │
-                               ▼   │                  ▼
-                            DOCTORS│            MEDICINES
-                                   │          ○(medicine_name) ○(category)
-                                   │          ○(qty_in_stock) ○(price_per_unit)
-                                   │          ○(supplier)
-```
 
 **Cardinalities at a glance:**
 
