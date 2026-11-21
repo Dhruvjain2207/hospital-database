@@ -23,9 +23,10 @@ A full-stack hospital management application built around a **MySQL relational d
 ## 📑 Table of Contents
 
 1. [Overview](#-overview)
-2. [Features](#-features)
-3. [Tech Stack](#-tech-stack)
-4. [Complete Database Flow](#-complete-database-flow)
+2. [Screenshots](#-screenshots)
+3. [Features](#-features)
+4. [Tech Stack](#-tech-stack)
+5. [Complete Database Flow](#-complete-database-flow)
    - [How Data Flows Through the System](#how-data-flows-through-the-system)
    - [ER Diagram — Classic Rectangle / Circle Style](#er-diagram--classic-rectangle--circle-style)
    - [ER Diagram — Entity Relationship (Mermaid)](#er-diagram--entity-relationship-mermaid)
@@ -47,6 +48,18 @@ A full-stack hospital management application built around a **MySQL relational d
 The system demonstrates how a **relational database** supports the day-to-day information needs of a hospital. The React frontend provides dedicated management screens; an Express REST API communicates with MySQL through the `mysql2` driver.
 
 It is also a practical DBMS project demonstrating relational schema design, primary keys, foreign keys, constraints, joins, aggregate functions, grouping, and full CRUD operations.
+
+---
+
+## 📸 Screenshots
+
+| Dashboard | Patients |
+|---|---|
+| ![Dashboard](./assets/screenshot_dashboard.png) | ![Patients](./assets/screenshot_patients.png) |
+
+| Departments |
+|---|
+| ![Departments](./assets/screenshot_departments.png) |
 
 ---
 
