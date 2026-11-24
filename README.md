@@ -524,12 +524,6 @@ cd hospital-database
 
 The root-level `hospital.sql` script creates `hospital_db`, all 10 tables, and inserts sample records.
 
-**Using the MySQL CLI:**
-
-```bash
-mysql -u root -p < hospital.sql
-```
-
 **Using MySQL Workbench:** open `hospital.sql` and click ⚡ Execute.
 
 **Verify:**
